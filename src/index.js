@@ -20,16 +20,19 @@ const groceryList = [
     quantity: " 8",
   },
 ];
-
 app.use(express.json());
-
+app.use(express.urlencoded());
+app.use(req,res,next)=>{
+console.log(req.url)
+next()
+}
 app.listen(PORT, () => console.log(`Running server on port ${PORT}`));
 
 app.get("/groceries", (req, res) => {
   res.send(groceryList);
 });
 
-app.post("/groceries", (req, res) => {
+app.post("/groceries",(req,res,next)=>{}, (req, res) => {
   console.log(req.body);
   groceryList.push(req.body);
   res.send(201);
