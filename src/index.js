@@ -21,16 +21,11 @@ const groceryList = [
   },
 ];
 app.use(express.json());
-<<<<<<< Updated upstream
 app.use(express.urlencoded());
 app.use(req,res,next)=>{
 console.log(req.url)
 next()
 }
-=======
-app.use(express.urlencoded())
-
->>>>>>> Stashed changes
 app.listen(PORT, () => console.log(`Running server on port ${PORT}`));
 
 app.get("/groceries", (req, res) => {
